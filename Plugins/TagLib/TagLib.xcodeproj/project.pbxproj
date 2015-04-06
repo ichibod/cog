@@ -11,7 +11,7 @@
 		177FCFA50B90C9600011C3B5 /* Plugin.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 177FCFA40B90C9600011C3B5 /* Plugin.h */; };
 		17C93FC30B90056C008627D6 /* TagLibMetadataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C93FC20B90056C008627D6 /* TagLibMetadataReader.m */; };
 		17F563B40C3BDBB30019975C /* TagLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F563A60C3BDB8F0019975C /* TagLib.framework */; };
-		17F563B60C3BDBB50019975C /* TagLib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17F563A60C3BDB8F0019975C /* TagLib.framework */; };
+		17F563B60C3BDBB50019975C /* TagLib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17F563A60C3BDB8F0019975C /* TagLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		322D621A150B5A690036C341 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 322D6219150B5A690036C341 /* Logging.h */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -203,7 +203,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0620;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "TagLib" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -271,6 +271,7 @@
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -292,6 +293,7 @@
 		1DEB913C08733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Cog-atpkmhghkwmklagkmmavkozetrwi/Build/Products/Debug\"",
@@ -310,9 +312,9 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				SDKROOT = macosx;
 				SYMROOT = ../../build;
@@ -322,7 +324,6 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = macosx;

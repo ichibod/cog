@@ -10,7 +10,7 @@
 		177FCF9E0B90C9530011C3B5 /* Plugin.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 177FCF9D0B90C9530011C3B5 /* Plugin.h */; };
 		17C93D360B8FDA66008627D6 /* VorbisDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C93D340B8FDA66008627D6 /* VorbisDecoder.m */; };
 		17F563820C3BDB670019975C /* Vorbis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F562F70C3BDAAC0019975C /* Vorbis.framework */; };
-		17F563850C3BDB6C0019975C /* Vorbis.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17F562F70C3BDAAC0019975C /* Vorbis.framework */; };
+		17F563850C3BDB6C0019975C /* Vorbis.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17F562F70C3BDAAC0019975C /* Vorbis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -185,7 +185,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0620;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "Vorbis" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -252,6 +252,7 @@
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -281,6 +282,7 @@
 		1DEB913C08733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
@@ -307,9 +309,9 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				SDKROOT = macosx;
 				SYMROOT = ../../build;
@@ -319,7 +321,6 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = macosx;

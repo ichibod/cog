@@ -10,7 +10,7 @@
 		176039760F5A2C6900294631 /* AudioOverload.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F0D9260F5A26B7008C62A7 /* AudioOverload.framework */; };
 		17603D770F5A562100294631 /* GlobalLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 17603D760F5A562100294631 /* GlobalLock.m */; };
 		17B7CF9D0F5A0A5A00A47027 /* AODecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B7CF9C0F5A0A5A00A47027 /* AODecoder.m */; };
-		17F0D92E0F5A26C9008C62A7 /* AudioOverload.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17F0D9260F5A26B7008C62A7 /* AudioOverload.framework */; };
+		17F0D92E0F5A26C9008C62A7 /* AudioOverload.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17F0D9260F5A26B7008C62A7 /* AudioOverload.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -191,7 +191,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0620;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "AudioOverload" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -272,6 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -289,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -303,7 +305,6 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -318,7 +319,6 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

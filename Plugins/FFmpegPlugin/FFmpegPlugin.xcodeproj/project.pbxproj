@@ -12,9 +12,9 @@
 		320C2D1E14D88FB900FF31CD /* libavcodec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D4117D14CB64D80050563F /* libavcodec.framework */; };
 		320C2D1F14D88FBF00FF31CD /* libavformat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D4117614CB64B30050563F /* libavformat.framework */; };
 		327DA20F14C8BA5600C1C9FE /* FFmpegAudioDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 327DA20E14C8BA5600C1C9FE /* FFmpegAudioDecoder.m */; };
-		32B2BB4214D74F91007200F9 /* libavformat.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 32D4117614CB64B30050563F /* libavformat.framework */; };
-		32B2BB4314D74F94007200F9 /* libavcodec.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 32D4117D14CB64D80050563F /* libavcodec.framework */; };
-		32B2BB4414D74F98007200F9 /* libavutil.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 32D4118B14CB65130050563F /* libavutil.framework */; };
+		32B2BB4214D74F91007200F9 /* libavformat.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 32D4117614CB64B30050563F /* libavformat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		32B2BB4314D74F94007200F9 /* libavcodec.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 32D4117D14CB64D80050563F /* libavcodec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		32B2BB4414D74F98007200F9 /* libavutil.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 32D4118B14CB65130050563F /* libavutil.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -235,7 +235,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0620;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "FFmpegPlugin" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -329,6 +329,7 @@
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -351,6 +352,7 @@
 		1DEB913C08733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
@@ -370,11 +372,11 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				SDKROOT = macosx;
 				SYMROOT = ../../build;
@@ -384,7 +386,6 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

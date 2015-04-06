@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17C8F33A0CBED3B0008D969D /* GME.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17C8F3370CBED393008D969D /* GME.framework */; };
+		17C8F33A0CBED3B0008D969D /* GME.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17C8F3370CBED393008D969D /* GME.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		17C8F3410CBED3BE008D969D /* GameContainer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17C8F33B0CBED3BE008D969D /* GameContainer.h */; };
 		17C8F3420CBED3BE008D969D /* GameContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C8F33C0CBED3BE008D969D /* GameContainer.m */; };
 		17C8F3430CBED3BE008D969D /* GameDecoder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17C8F33D0CBED3BE008D969D /* GameDecoder.h */; };
@@ -204,7 +204,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0620;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "GME" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -285,6 +285,7 @@
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -303,6 +304,7 @@
 		1DEB913C08733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -318,10 +320,10 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OBJROOT = ../../build;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				SDKROOT = macosx;
 				SYMROOT = ../../build;
@@ -331,7 +333,6 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OBJROOT = ../../build;
