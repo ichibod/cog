@@ -77,7 +77,7 @@ static int min(int a, int b)
     codecCtx->request_sample_fmt = AV_SAMPLE_FMT_S32;
     AVCodec* codec = avcodec_find_decoder(codecCtx->codec_id);
 
-    if(avcodec_open(codecCtx, codec) < 0) 
+    if(avcodec_open2(codecCtx, codec, NULL) < 0)
     {
         DLog(@"CAN'T FIND PROPER CODEC");
         return NO;
