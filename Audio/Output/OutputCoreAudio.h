@@ -26,6 +26,7 @@
 
 - (BOOL)setup;
 - (BOOL)setOutputDevice:(AudioDeviceID)outputDevice;
+- (BOOL)retrieveDefaultDevice:(AudioDeviceID *)outputDevice;
 - (void)start;
 - (void)pause;
 - (void)resume;

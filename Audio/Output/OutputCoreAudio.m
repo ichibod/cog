@@ -72,7 +72,28 @@ static OSStatus Sound_Renderer(void *inRefCon,  AudioUnitRenderActionFlags *ioAc
 	}
 }
 
-
+- (BOOL)retrieveDefaultDevice:(AudioDeviceID *)outputDevice
+{
+	UInt32 dataSize = 0;
+	OSStatus err = 0;
+	
+	AudioObjectPropertyAddress propertyAddress =
+	{
+		kAudioHardwarePropertyDefaultOutputDevice,
+		kAudioObjectPropertyScopeGlobal,
+		kAudioObjectPropertyElementMaster
+	};
+	
+	dataSize = sizeof(AudioDeviceID);
+	
+	err = AudioObjectGetPropertyData(kAudioObjectSystemObject, &propertyAddress, 0, NULL, &dataSize, outputDevice);
+	
+	if ( err != noErr ) {
+		ALog( "Could not get Default Output Device" );
+		return NO;
+	}
+	return YES;
+}
 
 - (BOOL)setOutputDevice:(AudioDeviceID)outputDevice
 {
@@ -82,11 +103,14 @@ static OSStatus Sound_Renderer(void *inRefCon,  AudioUnitRenderActionFlags *ioAc
 	
 	if (outputDevice == -1) {
 		DLog(@"DEVICE IS -1");
+#if 0
 		UInt32 size = sizeof(AudioDeviceID);
 		err = AudioHardwareGetProperty(kAudioHardwarePropertyDefaultOutputDevice,
 									  &size,
 									  &deviceID);
-								
+#else
+		err = [self retrieveDefaultDevice:&deviceID];
+#endif
 		if (err != noErr) {
 			ALog(@"THERE IS NO DEFAULT OUTPUT DEVICE");
 			
@@ -117,7 +141,8 @@ static OSStatus Sound_Renderer(void *inRefCon,  AudioUnitRenderActionFlags *ioAc
 	if (outputUnit)
 		[self stop];
 	
-	ComponentDescription desc;  
+	//	ComponentDescription desc;
+	AudioComponentDescription desc;
 	OSStatus err;
 	
 	desc.componentType = kAudioUnitType_Output;
@@ -126,11 +151,14 @@ static OSStatus Sound_Renderer(void *inRefCon,  AudioUnitRenderActionFlags *ioAc
 	desc.componentFlags = 0;
 	desc.componentFlagsMask = 0;
 	
-	Component comp = FindNextComponent(NULL, &desc);  //Finds an component that meets the desc spec's
+	//	Component comp = FindNextComponent(NULL, &desc);  //Finds an component that meets the desc spec's
+	AudioComponent comp = AudioComponentFindNext(NULL, &desc);  //Finds an component that meets the desc spec's
 	if (comp == NULL)
 		return NO;
 	
-	err = OpenAComponent(comp, &outputUnit);  //gains access to the services provided by the component
+	//err = OpenAComponent(comp, &outputUnit);  //gains access to the services provided by the component
+	err = AudioComponentInstanceNew(comp, &outputUnit);
+	
 	if (err)
 		return NO;
 	
@@ -231,7 +259,8 @@ static OSStatus Sound_Renderer(void *inRefCon,  AudioUnitRenderActionFlags *ioAc
 	{
         AudioOutputUnitStop(outputUnit);
 		AudioUnitUninitialize (outputUnit);
-		CloseComponent(outputUnit);
+		//CloseComponent(outputUnit);
+		AudioComponentInstanceDispose(outputUnit);
 		outputUnit = NULL;
 	}
 }
@@ -252,7 +281,8 @@ static OSStatus Sound_Renderer(void *inRefCon,  AudioUnitRenderActionFlags *ioAc
 
 - (void)resume
 {
-	OSStatus err = AudioOutputUnitStart(outputUnit);
+	//OSStatus err =
+	AudioOutputUnitStart(outputUnit);
 }
 
 @end
