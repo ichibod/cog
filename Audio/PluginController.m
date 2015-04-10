@@ -30,6 +30,11 @@ static PluginController *sharedPluginController = nil;
 	return sharedPluginController;
 }
 
+-(int)putMetadataInURL:(NSURL *)url
+{
+	NSLog(@"ERROR: This function is not implemented and takes parameter URL %@", url);
+	return 0;
+}
 
 - (id)init {
 	self = [super init];
@@ -90,8 +95,11 @@ static PluginController *sharedPluginController = nil;
 
 - (void)loadPluginsAtPath:(NSString *)path
 {
-
-	NSArray *dirContents = [[NSFileManager defaultManager] directoryContentsAtPath:path];
+	NSError *err;
+	
+	NSLog(@"COGAUDIO: Loading plugins at path: %@", path);
+	//	NSArray *dirContents = [[NSFileManager defaultManager] directoryContentsAtPath:path];
+	NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&err];
 
 	for (NSString *pname in dirContents)
 	{
