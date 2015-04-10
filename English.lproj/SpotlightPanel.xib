@@ -564,7 +564,7 @@
 					<string key="NSFrameSize">{480, 320}</string>
 					<reference key="NSNextKeyView" ref="360753222"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1280, 1002}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1680, 1027}}</string>
 				<string key="NSMinSize">{400, 276}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<string key="NSFrameAutosaveName">Spotlight</string>
