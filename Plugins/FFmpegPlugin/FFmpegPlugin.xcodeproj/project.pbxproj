@@ -335,7 +335,6 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Cog-atpkmhghkwmklagkmmavkozetrwi/Build/Products/Debug\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -357,7 +356,6 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Cog-atpkmhghkwmklagkmmavkozetrwi/Build/Products/Debug\"",
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
