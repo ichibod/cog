@@ -73,7 +73,7 @@ int ao_get_lib(char *fn, uint8 **buf, uint64 *length)
 	uint8_t *filebuf = malloc(size);
 	if (!filebuf) {
 		[source close];
-		ALog(@"ERROR: could not allocate %d bytes of memory\n", size);
+		ALog(@"ERROR: could not allocate %ld bytes of memory\n", size);
 		return AO_FAIL;
 	}
 	

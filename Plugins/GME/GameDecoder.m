@@ -12,10 +12,10 @@
 
 @implementation GameDecoder
 
-gme_err_t readCallback( void* data, void* out, long count )
+gme_err_t readCallback( void* data, void* out, int count )
 {
 	GameDecoder *decoder = (GameDecoder *)data;
-	DLog(@"Amount: %li", count);
+	DLog(@"Amount: %i", count);
 	int n = [[decoder source] read:out amount:count];
 	DLog(@"Read: %i", n);
 	if (n <= 0) {

@@ -13,8 +13,8 @@
 	int _socket;
 }
 
-+ (id)socketWithHost:(NSString *)host port:(int) port;
-- (id)initWithHost:(NSString *)host port:(int)port;
++ (id)socketWithHost:(NSString *)host port:(NSInteger) port;
+- (id)initWithHost:(NSString *)host port:(NSInteger)port;
 
 - (NSInteger)send:(const void *)data amount:(NSInteger)amount;
 - (NSInteger)receive:(void *)data amount:(NSInteger)amount;

@@ -41,7 +41,12 @@
 - (BOOL)open:(id<CogSource>)source;
 {
 	OSStatus						err;
+#if 0
+	// modified for deprecation
 	FSRef							ref;
+#endif
+	
+	//NSLog(@"FUCKERRRRRRRRRR!!!! CoreAudioDecoder: open!!!!");
 	
 	NSURL *url = [source url];
 	[source close]; //There's no room for your kind around here!
@@ -49,16 +54,20 @@
 	if (![[url scheme] isEqualToString:@"file"])
 		return NO;
 		
-	
+	//NSLog(@"Trying to open file: %s", (const UInt8 *)[[url path] UTF8String]);
+#if 0
 	// Open the input file
 	err = FSPathMakeRef((const UInt8 *)[[url path] UTF8String], &ref, NULL);
+	//FSMakeFSRefUnicode(<#const FSRef *parentRef#>, <#UniCharCount nameLength#>, <#const UniChar *name#>, <#TextEncoding textEncodingHint#>, <#FSRef *newRef#>)
 	if(noErr != err) {
 		return NO;
 	}
-	
-	err = ExtAudioFileOpen(&ref, &_in);
+#endif
+	//	err = ExtAudioFileOpen(&ref, &_in);
+	NSLog(@"With new function");
+	err = ExtAudioFileOpenURL((CFURLRef) url, &_in);
 	if(noErr != err) {
-		NSLog(@"Error opening file: %s", &err);
+		NSLog(@"Error opening file: %i", err);
 		return NO;
 	}
 	
