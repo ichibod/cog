@@ -53,7 +53,7 @@
 @protocol CogMetadataWriter <NSObject>
 //+ (NSArray *)fileTypes;
 //+ (NSArray *)mimeTypes;
-+ (int)putMetadataInURL:(NSURL *)url;
++ (int)putMetadataInURL:(NSURL *)url tagData:(NSDictionary *)tagData;
 @end
 
 @protocol CogPropertiesReader <NSObject>

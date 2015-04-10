@@ -321,7 +321,7 @@ static int it_read_old_instrument(IT_INSTRUMENT *instrument, DUMBFILE *f)
 	if (dumbfile_mgetl(f) != IT_INSTRUMENT_SIGNATURE)
 		return -1;
 
-	dumbfile_getnc(instrument->filename, 13, f);
+	dumbfile_getnc((char *)instrument->filename, 13, f);
 	instrument->filename[13] = 0;
 
 	instrument->volume_envelope.flags = dumbfile_getc(f);

@@ -13,9 +13,24 @@
 + (NSArray *)preferencePanes
 {
 	GeneralPreferencesPlugin *plugin = [[[GeneralPreferencesPlugin alloc] init] autorelease];
+#if 0
+	NSBundle *bundle  = [NSBundle mainBundle];
+	NSArray  *objects = [NSArray arrayWithObjects:
+						 [plugin playlistPane],
+						 [plugin hotKeyPane],
+						 [plugin remotePane],
+						 [plugin updatesPane],
+						 [plugin outputPane],
+						 [plugin scrobblerPane],
+						 [plugin growlPane],
+						 [plugin appearancePane],
+						 nil];
+
+	[bundle loadNibNamed:@"Preferences" owner:plugin topLevelObjects:&objects];
+#else
 	[NSBundle loadNibNamed:@"Preferences" owner:plugin];
-	
-	return [NSArray arrayWithObjects: 
+#endif
+	return [NSArray arrayWithObjects:
 			[plugin playlistPane],
 			[plugin hotKeyPane],
 			[plugin remotePane],

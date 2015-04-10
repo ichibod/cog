@@ -45,6 +45,7 @@
 	[alert setInformativeText:NSLocalizedString(@"FeedbackFailedInformativeText", @"")];
 	
 	[alert beginSheetModalForWindow:[self window] modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:[NSNumber numberWithBool:NO]];
+	//[alert beginSheetModalForWindow:[self window] completionHandler:nil];
 }
 
 - (void)feedbackDidSend:(FeedbackSocket *)feedback

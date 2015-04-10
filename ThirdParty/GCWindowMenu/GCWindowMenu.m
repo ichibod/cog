@@ -212,7 +212,7 @@
 ///********************************************************************************************************************
 
 - (id)	initWithContentRect:(NSRect) contentRect
-		styleMask:(unsigned int) styleMask
+		styleMask:(unsigned long) styleMask
 		backing:(NSBackingStoreType) bufferingType
 		defer:(BOOL) deferCreation
 {

@@ -24,7 +24,7 @@
  */
 
 #import "AudioScrobblerClient.h"
-
+#include "arpa/inet.h"
 #define kBufferSize		1024
 #define	kPortsToStep	5
 

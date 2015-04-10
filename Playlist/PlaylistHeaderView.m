@@ -24,12 +24,12 @@
 		BOOL clickedSeperator = NO;
 		// handle a click one pixel away at right
 		NSRect rect = [self headerRectOfColumn:column];
-		if (abs(rect.origin.x - local_point.x) <= 1 && column > 0) {
+		if (fabs(rect.origin.x - local_point.x) <= 1 && column > 0) {
 			--column;
 			clickedSeperator = YES;
 		}
 		// handle a click 3 pixels away at left
-		else if (abs(rect.origin.x + rect.size.width - local_point.x) <= 3)
+		else if (fabs(rect.origin.x + rect.size.width - local_point.x) <= 3)
 			clickedSeperator = YES;
 		
 		if (clickedSeperator) {
